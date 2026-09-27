@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>俯仰之间 —— 合肥一六八中学线上美育数字展厅</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- ============ 导航栏 ============ -->
+  <nav class="nav" id="nav">
+    <div class="nav-brand" onclick="App.navigate('home')">
+      <div class="nav-brand-mark">俯</div>
+      <div>
+        <div class="nav-brand-text">俯仰之间</div>
+        <div class="nav-brand-sub">合肥一六八中学 · 美育数字展厅</div>
+      </div>
+    </div>
+    <div class="nav-links">
+      <a class="nav-link active" data-page="home" onclick="App.navigate('home')">首页</a>
+      <a class="nav-link" data-page="zones" onclick="App.navigate('home')">分区</a>
+      <button class="nav-3d-btn" onclick="App.enter3D()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/>
+        </svg>
+        进入3D画廊
+      </button>
+      <a class="nav-link" href="admin.html" style="color:var(--gold);">后台管理</a>
+    </div>
+  </nav>
+
+  <!-- ============ 主内容区 ============ -->
+  <main class="main" id="main">
+    <!-- 页面内容由 JS 动态渲染 -->
+  </main>
+
+  <!-- ============ 3D 立体画廊 ============ -->
+  <div class="gallery-3d" id="gallery3d">
+    <canvas class="gallery-3d-canvas" id="gallery3dCanvas"></canvas>
+
+    <!-- 3D 顶部栏 -->
+    <div class="gallery-3d-topbar" id="gallery3dTopbar" style="display:none;">
+      <div class="gallery-3d-title" id="gallery3dTitle">3D 画廊</div>
+      <div class="gallery-3d-actions">
+        <button class="gallery-3d-btn" onclick="Gallery3D.backToZoneSelect()">返回分区选择</button>
+        <button class="gallery-3d-btn" onclick="App.exit3D()">返回2D展厅</button>
+      </div>
+    </div>
+
+    <!-- 操作提示 -->
+    <div class="gallery-3d-hint" id="gallery3dHint" style="display:none;">
+      <div class="gallery-3d-hint-item"><span class="gallery-3d-hint-key">拖拽</span>旋转视角</div>
+      <div class="gallery-3d-hint-item"><span class="gallery-3d-hint-key">W A S D</span>移动</div>
+      <div class="gallery-3d-hint-item"><span class="gallery-3d-hint-key">点击地面</span>平滑移动</div>
+      <div class="gallery-3d-hint-item"><span class="gallery-3d-hint-key">点击画作</span>查看详情</div>
+    </div>
+
+    <!-- 信息卡片 -->
+    <div class="gallery-3d-infocard" id="gallery3dInfocard">
+      <div class="gallery-3d-infocard-close" onclick="Gallery3D.closeInfoCard()">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </div>
+      <div class="gallery-3d-infocard-title" id="infoCardTitle">作品名称</div>
+      <div class="gallery-3d-infocard-author" id="infoCardAuthor">作者</div>
+      <div class="gallery-3d-infocard-desc" id="infoCardDesc">创作说明</div>
+      <div class="gallery-3d-infocard-meta" id="infoCardMeta">所属画展 / 主题</div>
+    </div>
+
+    <!-- 选择界面 -->
+    <div class="gallery-3d-selector" id="gallery3dSelector">
+      <div class="selector-title" id="selectorTitle">选择分区</div>
+      <div class="selector-subtitle" id="selectorSubtitle">3D 立体画廊</div>
+      <div class="selector-grid" id="selectorGrid"></div>
+      <div class="selector-back" id="selectorBack" style="display:none;" onclick="Gallery3D.selectorBack()">← 返回上一级</div>
+    </div>
+
+    <!-- 加载失败提示 -->
+    <div class="gallery-3d-error" id="gallery3dError">
+      <div class="gallery-3d-error-icon">!</div>
+      <div class="gallery-3d-error-text">3D 画廊加载失败</div>
+      <div class="gallery-3d-error-sub">Three.js 库未能从 CDN 加载，请检查网络连接后刷新页面</div>
+      <button class="gallery-3d-btn" style="margin-top:24px;" onclick="App.exit3D()">返回2D展厅</button>
+    </div>
+  </div>
+
+  <!-- ============ 页脚 ============ -->
+  <footer class="footer" id="footer">
+    <div class="footer-text">
+      俯仰之间 · 合肥一六八中学线上美育数字展厅<br>
+      © 2026 合肥一六八中学 · 美育课程成果
+    </div>
+  </footer>
+
+  <!-- ============ 脚本 ============ -->
+  <script src="data.js"></script>
+  <script src="store.js"></script>
+  <script>Store.init();</script>
+  <script src="app.js"></script>
+  <script src="gallery3d.js"></script>
+
+  <!-- Three.js r160 CDN -->
+  <script>
+    // 动态加载 Three.js，失败时显示提示
+    window.__threeLoaded = false;
+    (function() {
+      var s = document.createElement('script');
+      s.src = 'https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js';
+      s.onload = function() { window.__threeLoaded = true; };
+      s.onerror = function() { window.__threeFailed = true; };
+      document.head.appendChild(s);
+    })();
+  </script>
+</body>
+</html>
