@@ -1,0 +1,1073 @@
+/* ============================================================
+   俯仰之间 —— 后台管理样式
+   暗调国风 · 简洁实用
+   ============================================================ */
+
+.admin-body {
+  background: var(--bg-deep);
+  min-height: 100vh;
+}
+
+/* ============================================================
+   登录页
+   ============================================================ */
+.admin-login {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    radial-gradient(ellipse 60% 50% at 50% 30%, rgba(184,149,90,0.08) 0%, transparent 70%),
+    var(--bg-deep);
+  padding: 20px;
+}
+
+.admin-login-card {
+  width: 100%;
+  max-width: 420px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  padding: 48px 40px;
+  position: relative;
+}
+
+.admin-login-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+
+.admin-login-logo {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.admin-login-mark {
+  width: 56px;
+  height: 56px;
+  border: 1px solid var(--gold);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  color: var(--gold);
+  margin: 0 auto 20px;
+  box-shadow: 0 0 30px var(--gold-glow);
+}
+
+.admin-login-logo h1 {
+  font-size: 28px;
+  font-weight: 300;
+  letter-spacing: 8px;
+  text-indent: 8px;
+  color: var(--text-moon);
+  margin-bottom: 8px;
+}
+
+.admin-login-logo p {
+  font-size: 12px;
+  color: var(--text-muted);
+  letter-spacing: 2px;
+}
+
+.admin-login-form .admin-form-group {
+  margin-bottom: 20px;
+}
+
+.admin-login-error {
+  color: #e57373;
+  font-size: 13px;
+  margin-bottom: 16px;
+  min-height: 20px;
+  text-align: center;
+}
+
+.admin-login-hint {
+  text-align: center;
+  margin-top: 24px;
+}
+
+.admin-login-hint a {
+  font-size: 13px;
+  color: var(--text-muted);
+  transition: color 0.3s;
+}
+
+.admin-login-hint a:hover {
+  color: var(--gold);
+}
+
+/* ============================================================
+   后台布局
+   ============================================================ */
+.admin-layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.admin-sidebar {
+  width: 240px;
+  background: var(--bg-card);
+  border-right: 1px solid var(--border-subtle);
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 100;
+}
+
+.admin-sidebar-brand {
+  padding: 24px 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.admin-sidebar-mark {
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--gold);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  color: var(--gold);
+  flex-shrink: 0;
+}
+
+.admin-sidebar-title {
+  font-size: 16px;
+  letter-spacing: 3px;
+  color: var(--text-moon);
+}
+
+.admin-sidebar-sub {
+  font-size: 10px;
+  color: var(--text-muted);
+  letter-spacing: 1px;
+  margin-top: 2px;
+}
+
+.admin-sidebar-nav {
+  flex: 1;
+  padding: 16px 12px;
+}
+
+.admin-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  font-size: 14px;
+  color: var(--text-secondary);
+  cursor: pointer;
+  border-radius: 2px;
+  transition: all 0.3s;
+  margin-bottom: 4px;
+  letter-spacing: 1px;
+}
+
+.admin-nav-item svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+.admin-nav-item:hover {
+  background: var(--bg-card-hover);
+  color: var(--text-moon);
+}
+
+.admin-nav-item.active {
+  background: var(--gold-glow);
+  color: var(--gold-light);
+  border-left: 2px solid var(--gold);
+}
+
+.admin-sidebar-footer {
+  padding: 20px;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.admin-user-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.admin-user-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--gold);
+  color: var(--bg-deep);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.admin-user-name {
+  font-size: 14px;
+  color: var(--text-moon);
+}
+
+.admin-user-role {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.admin-logout-btn {
+  width: 100%;
+  padding: 8px;
+  font-size: 12px;
+  color: var(--text-muted);
+  border: 1px solid var(--border-subtle);
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s;
+  letter-spacing: 2px;
+}
+
+.admin-logout-btn:hover {
+  border-color: #e57373;
+  color: #e57373;
+}
+
+.admin-main {
+  flex: 1;
+  margin-left: 240px;
+  padding: 32px 40px;
+  min-height: 100vh;
+}
+
+/* ============================================================
+   页面头部
+   ============================================================ */
+.admin-page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 28px;
+}
+
+.admin-page-header h1 {
+  font-size: 24px;
+  font-weight: 400;
+  letter-spacing: 4px;
+  color: var(--text-moon);
+}
+
+/* ============================================================
+   按钮
+   ============================================================ */
+.admin-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 8px 20px;
+  font-size: 13px;
+  letter-spacing: 1px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-family: inherit;
+  white-space: nowrap;
+}
+
+.admin-btn-primary {
+  background: var(--gold);
+  color: var(--bg-deep);
+  border-color: var(--gold);
+}
+
+.admin-btn-primary:hover {
+  background: var(--gold-light);
+  border-color: var(--gold-light);
+}
+
+.admin-btn-outline {
+  background: transparent;
+  color: var(--text-secondary);
+  border-color: var(--border-subtle);
+}
+
+.admin-btn-outline:hover {
+  border-color: var(--gold);
+  color: var(--gold-light);
+}
+
+.admin-btn-danger {
+  background: transparent;
+  color: #e57373;
+  border-color: rgba(229,115,115,0.3);
+}
+
+.admin-btn-danger:hover {
+  background: rgba(229,115,115,0.1);
+  border-color: #e57373;
+}
+
+.admin-btn-danger:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.admin-btn-block {
+  width: 100%;
+  padding: 12px;
+  font-size: 15px;
+  letter-spacing: 4px;
+}
+
+.admin-btn-sm {
+  padding: 5px 12px;
+  font-size: 12px;
+}
+
+/* ============================================================
+   表单
+   ============================================================ */
+.admin-form-group {
+  margin-bottom: 18px;
+}
+
+.admin-form-group label {
+  display: block;
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+  letter-spacing: 1px;
+}
+
+.admin-form-group input,
+.admin-form-group select,
+.admin-form-group textarea {
+  width: 100%;
+  padding: 10px 14px;
+  background: var(--bg-base);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-moon);
+  font-size: 14px;
+  font-family: inherit;
+  transition: border-color 0.3s;
+  outline: none;
+}
+
+.admin-form-group input:focus,
+.admin-form-group select:focus,
+.admin-form-group textarea:focus {
+  border-color: var(--gold);
+}
+
+.admin-form-group textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.admin-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.admin-required {
+  color: #e57373;
+}
+
+.admin-char-count {
+  font-size: 11px;
+  color: var(--text-muted);
+  font-weight: normal;
+}
+
+/* ============================================================
+   筛选栏
+   ============================================================ */
+.admin-filter-bar {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.admin-filter-bar select,
+.admin-filter-bar input {
+  padding: 8px 14px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-moon);
+  font-size: 13px;
+  font-family: inherit;
+  outline: none;
+  min-width: 140px;
+}
+
+.admin-filter-bar select:focus,
+.admin-filter-bar input:focus {
+  border-color: var(--gold);
+}
+
+.admin-filter-bar input {
+  flex: 1;
+  min-width: 200px;
+}
+
+/* ============================================================
+   批量操作栏
+   ============================================================ */
+.admin-batch-bar {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 16px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  margin-bottom: 0;
+  border-bottom: none;
+}
+
+.admin-checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--text-secondary);
+  cursor: pointer;
+}
+
+.admin-checkbox-label input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--gold);
+  cursor: pointer;
+}
+
+.admin-selected-count {
+  font-size: 13px;
+  color: var(--text-muted);
+  flex: 1;
+}
+
+/* ============================================================
+   表格
+   ============================================================ */
+.admin-table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--border-subtle);
+  background: var(--bg-card);
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.admin-table th {
+  padding: 14px 16px;
+  text-align: left;
+  background: var(--bg-base);
+  color: var(--text-muted);
+  font-weight: 400;
+  letter-spacing: 1px;
+  border-bottom: 1px solid var(--border-subtle);
+  white-space: nowrap;
+}
+
+.admin-table td {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+  vertical-align: middle;
+}
+
+.admin-table tbody tr {
+  transition: background 0.2s;
+}
+
+.admin-table tbody tr:hover {
+  background: var(--bg-card-hover);
+}
+
+.admin-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.admin-table .work-id {
+  font-family: monospace;
+  color: var(--text-muted);
+  font-size: 12px;
+}
+
+.admin-table .work-title-cell {
+  color: var(--text-moon);
+  font-weight: 400;
+}
+
+.admin-table-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.admin-table-actions .admin-btn {
+  padding: 4px 10px;
+  font-size: 12px;
+}
+
+.admin-empty {
+  padding: 60px 20px;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+/* ============================================================
+   上传区域
+   ============================================================ */
+.admin-upload-area {
+  border: 2px dashed var(--border-subtle);
+  padding: 32px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s;
+  background: var(--bg-base);
+  position: relative;
+}
+
+.admin-upload-area:hover,
+.admin-upload-area.dragover {
+  border-color: var(--gold);
+  background: var(--gold-glow);
+}
+
+.admin-upload-area-sm {
+  padding: 20px;
+}
+
+.admin-upload-placeholder svg {
+  width: 36px;
+  height: 36px;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+}
+
+.admin-upload-placeholder p {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin-bottom: 4px;
+}
+
+.admin-upload-hint {
+  font-size: 11px !important;
+  color: var(--text-muted) !important;
+}
+
+.admin-upload-preview {
+  position: relative;
+}
+
+.admin-upload-preview img {
+  max-width: 100%;
+  max-height: 240px;
+  margin: 0 auto;
+  border: 1px solid var(--border-subtle);
+}
+
+.admin-upload-info {
+  margin-top: 10px;
+  font-size: 12px;
+  color: var(--gold);
+}
+
+.admin-upload-remove {
+  margin-top: 10px;
+  padding: 6px 16px;
+  font-size: 12px;
+  background: transparent;
+  border: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.admin-upload-remove:hover {
+  border-color: #e57373;
+  color: #e57373;
+}
+
+/* ============================================================
+   弹窗
+   ============================================================ */
+.admin-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  z-index: 2000;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.admin-modal.show {
+  display: flex;
+}
+
+.admin-modal-content {
+  background: var(--bg-card);
+  border: 1px solid var(--border-gold);
+  width: 100%;
+  max-width: 640px;
+  max-height: 90vh;
+  overflow-y: auto;
+  animation: modalIn 0.3s ease;
+}
+
+.admin-modal-content-sm {
+  max-width: 480px;
+}
+
+@keyframes modalIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.admin-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.admin-modal-header h2 {
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 3px;
+  color: var(--text-moon);
+}
+
+.admin-modal-close {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  color: var(--text-muted);
+  cursor: pointer;
+  background: none;
+  border: none;
+  transition: color 0.3s;
+}
+
+.admin-modal-close:hover {
+  color: var(--gold);
+}
+
+.admin-modal-body {
+  padding: 24px;
+}
+
+.admin-modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border-subtle);
+  margin-top: 8px;
+}
+
+/* ============================================================
+   确认弹窗
+   ============================================================ */
+.admin-confirm-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  z-index: 3000;
+  align-items: center;
+  justify-content: center;
+}
+
+.admin-confirm-modal.show {
+  display: flex;
+}
+
+.admin-confirm-content {
+  background: var(--bg-card);
+  border: 1px solid var(--border-gold);
+  padding: 36px 40px;
+  text-align: center;
+  max-width: 400px;
+  animation: modalIn 0.3s ease;
+}
+
+.admin-confirm-icon {
+  width: 48px;
+  height: 48px;
+  border: 1px solid #e57373;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  color: #e57373;
+  margin: 0 auto 20px;
+}
+
+.admin-confirm-text {
+  font-size: 15px;
+  color: var(--text-moon);
+  line-height: 1.8;
+  margin-bottom: 28px;
+}
+
+.admin-confirm-btns {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+/* ============================================================
+   Toast
+   ============================================================ */
+.admin-toast {
+  position: fixed;
+  top: 24px;
+  left: 50%;
+  transform: translateX(-50%) translateY(-20px);
+  padding: 12px 28px;
+  background: var(--bg-card);
+  border: 1px solid var(--gold);
+  color: var(--text-moon);
+  font-size: 14px;
+  letter-spacing: 1px;
+  z-index: 4000;
+  opacity: 0;
+  transition: all 0.3s;
+  pointer-events: none;
+}
+
+.admin-toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+.admin-toast.error {
+  border-color: #e57373;
+  color: #e57373;
+}
+
+/* ============================================================
+   数据统计
+   ============================================================ */
+.admin-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+.admin-stat-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  padding: 24px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s;
+}
+
+.admin-stat-card:hover {
+  border-color: var(--border-gold);
+  transform: translateY(-2px);
+}
+
+.admin-stat-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 100%;
+  background: var(--gold);
+}
+
+.admin-stat-num {
+  font-size: 36px;
+  font-weight: 300;
+  color: var(--gold);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.admin-stat-label {
+  font-size: 13px;
+  color: var(--text-secondary);
+  letter-spacing: 1px;
+}
+
+.admin-stat-sub {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-top: 6px;
+}
+
+.admin-recent-section h2 {
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 3px;
+  color: var(--text-moon);
+  margin-bottom: 16px;
+}
+
+.admin-recent-list {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+}
+
+.admin-recent-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 20px;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.admin-recent-item:last-child {
+  border-bottom: none;
+}
+
+.admin-recent-thumb {
+  width: 48px;
+  height: 48px;
+  background: var(--bg-base);
+  border: 1px solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.admin-recent-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.admin-recent-info {
+  flex: 1;
+}
+
+.admin-recent-title {
+  font-size: 14px;
+  color: var(--text-moon);
+  margin-bottom: 2px;
+}
+
+.admin-recent-meta {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.admin-recent-time {
+  font-size: 12px;
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+/* ============================================================
+   画展/主题分组列表
+   ============================================================ */
+.admin-group-section {
+  margin-bottom: 32px;
+}
+
+.admin-group-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 20px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  margin-bottom: 0;
+}
+
+.admin-group-zone {
+  font-size: 16px;
+  color: var(--gold);
+  letter-spacing: 2px;
+}
+
+.admin-group-medium {
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.admin-group-count {
+  margin-left: auto;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.admin-group-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 16px;
+  padding: 16px;
+  background: var(--bg-base);
+  border: 1px solid var(--border-subtle);
+  border-top: none;
+}
+
+.admin-group-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  padding: 20px;
+  transition: all 0.3s;
+}
+
+.admin-group-card:hover {
+  border-color: var(--border-gold);
+}
+
+.admin-group-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.admin-group-card-title {
+  font-size: 16px;
+  color: var(--text-moon);
+  letter-spacing: 1px;
+}
+
+.admin-group-card-desc {
+  font-size: 12px;
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-bottom: 14px;
+  min-height: 40px;
+}
+
+.admin-group-card-meta {
+  display: flex;
+  gap: 16px;
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-bottom: 14px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.admin-group-card-meta strong {
+  color: var(--gold);
+  font-weight: 400;
+}
+
+.admin-group-card-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.admin-group-card-cover {
+  width: 100%;
+  height: 100px;
+  background: var(--bg-base);
+  margin-bottom: 12px;
+  border: 1px solid var(--border-subtle);
+  overflow: hidden;
+}
+
+.admin-group-card-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 主题标签 */
+.admin-theme-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.admin-theme-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  background: var(--bg-base);
+  border: 1px solid var(--border-subtle);
+  font-size: 12px;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.admin-theme-tag:hover {
+  border-color: var(--gold);
+  color: var(--gold-light);
+}
+
+.admin-theme-tag .tag-count {
+  color: var(--gold);
+  font-size: 11px;
+}
+
+.admin-add-theme-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 12px;
+  background: transparent;
+  border: 1px dashed var(--border-gold);
+  font-size: 12px;
+  color: var(--gold);
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.admin-add-theme-btn:hover {
+  background: var(--gold-glow);
+}
+
+/* ============================================================
+   响应式
+   ============================================================ */
+@media (max-width: 900px) {
+  .admin-sidebar {
+    width: 60px;
+  }
+  .admin-sidebar-brand > div:not(.admin-sidebar-mark),
+  .admin-nav-item span,
+  .admin-user-info > div:not(.admin-user-avatar),
+  .admin-logout-btn {
+    display: none;
+  }
+  .admin-main {
+    margin-left: 60px;
+    padding: 20px;
+  }
+  .admin-form-row {
+    grid-template-columns: 1fr;
+  }
+}
